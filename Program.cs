@@ -15,11 +15,8 @@ builder.Services.AddDbContext<MusicDbContext>(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Créer les dossiers uploads au démarrage
 var uploadsPath = Path.Combine(app.Environment.ContentRootPath, "uploads");
